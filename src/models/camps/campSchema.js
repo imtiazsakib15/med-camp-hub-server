@@ -41,6 +41,10 @@ const campSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  organizer_email: {
+    type: String,
+    required: true,
+  },
 });
 
 const Camp = mongoose.model("Camp", campSchema);
