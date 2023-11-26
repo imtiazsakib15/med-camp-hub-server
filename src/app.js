@@ -3,6 +3,7 @@ const applyMiddleware = require("./middlewares");
 const globalErrorHandler = require("./utils/globalErrorHandler");
 const connectDB = require("./db/connectDB");
 const userRoutes = require("./routes/v1/users")
+const campRoutes = require("./routes/v1/camps")
 
 require("dotenv").config();
 const app = express();
@@ -12,6 +13,7 @@ applyMiddleware(app);
 
 // Import Routes
 app.use(userRoutes)
+app.use(campRoutes)
 
 app.get("/health", (req, res) => {
   res.send("MedCamp Hub is running....");
