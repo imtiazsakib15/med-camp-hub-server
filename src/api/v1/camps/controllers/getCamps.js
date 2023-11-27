@@ -5,7 +5,6 @@ const getCamps = async (req, res) => {
   if (req.query?.organizer_email)
     camps = await Camp.find({ organizer_email: req.query?.organizer_email });
   else camps = await Camp.find({});
-  console.log(camps);
   res.send(camps);
 };
 
