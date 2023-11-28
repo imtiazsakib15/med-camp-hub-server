@@ -6,7 +6,6 @@ const verifyToken = (req, res, next) => {
   jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
     if (err) return res.status(401).send({ message: "Unauthorized" });
     req.user = decoded;
-    console.log(req.user);
     next();
   });
 };

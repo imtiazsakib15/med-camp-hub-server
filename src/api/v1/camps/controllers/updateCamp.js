@@ -8,10 +8,8 @@ const postCamp = async (req, res) => {
       ...modifiedCamp,
     },
   };
-  console.log(modifiedCamp, id);
 
   const result = await Camp.updateOne({ _id: id }, updateCamp);
-  console.log(result);
   res.send(result);
 };
 

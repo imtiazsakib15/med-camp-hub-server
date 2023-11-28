@@ -5,6 +5,7 @@ const connectDB = require("./db/connectDB");
 const userRoutes = require("./routes/v1/users");
 const campRoutes = require("./routes/v1/camps");
 const authRoutes = require("./routes/v1/authentication");
+const upcomingCampRoutes = require("./routes/v1/upcomingCamps");
 
 require("dotenv").config();
 const app = express();
@@ -16,6 +17,7 @@ applyMiddleware(app);
 app.use(userRoutes);
 app.use(campRoutes);
 app.use(authRoutes);
+app.use(upcomingCampRoutes);
 
 app.get("/health", (req, res) => {
   res.send("MedCamp Hub is running....");
