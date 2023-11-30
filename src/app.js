@@ -7,6 +7,7 @@ const campRoutes = require("./routes/v1/camps");
 const authRoutes = require("./routes/v1/authentication");
 const upcomingCampRoutes = require("./routes/v1/upcomingCamps");
 const subscribeNewsletterRoutes = require("./routes/v1/subscribeNewsletter");
+const registerCampRoutes = require("./routes/v1/registerCamps");
 
 require("dotenv").config();
 const app = express();
@@ -20,6 +21,7 @@ app.use(campRoutes);
 app.use(authRoutes);
 app.use(upcomingCampRoutes);
 app.use(subscribeNewsletterRoutes);
+app.use(registerCampRoutes);
 
 app.get("/health", (req, res) => {
   res.send("MedCamp Hub is running....");
