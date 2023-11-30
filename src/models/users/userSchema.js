@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   name: String,
+  photoURL: String,
   role: {
     type: String,
     required: true,
